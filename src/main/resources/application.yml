@@ -1,0 +1,60 @@
+server:
+  port: 8888
+spring:
+  datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      #url: jdbc:dm://localhost:12345/GD_MONITOR?characterEncoding=utf8&allowMultiQueries=true
+      url: jdbc:dm://10.19.13.182:12345/GD_MONITOR?characterEncoding=utf8&allowMultiQueries=true
+      username: SYSDBA
+      password: SYSDBA
+      driver-class-name: dm.jdbc.driver.DmDriver
+
+     # 下面为连接池的补充设置，应用到上面所有数据源中
+      # 初始化大小，最小，最大
+      initialSize: 8
+      minIdle: 8
+      maxActive: 30
+  # 配置获取连接等待超时的时间
+      maxWait: 60000
+  # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+  # 配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+  # 打开PSCache，并且指定每个连接上PSCache的大小
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+  # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      filters: stat,wall,log4j
+  # 合并多个DruidDataSource的监控数据
+      useGlobalDataSourceStat: true
+
+#Thymeleaf 缓存在开发过程中，肯定是不行的，那么就要在开发的时候把缓存关闭
+  thymeleaf:
+     cache: false
+          #content-type: text/html
+          #mode: LEGACYHTML5
+  mvc:
+     static-path-pattern: /static/**
+  quartz:
+    properties:
+      org:
+        quartz:
+         # scheduler:
+          #  instanceName: clusteredScheduler
+          #  instanceId: AUTO
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 10
+            threadPriority: 5
+            threadsInheritContextClassLoaderOfInitializingThread: true
+logging:
+    config: classpath:log/logback-spring.xml
+    path: log
+
+
+
+

@@ -1,0 +1,10 @@
+2019-06-12 11:19:48.038 [main] INFO  com.kedong.App - Starting App on LAPTOP-AIDPCSR2 with PID 10652 (D:\work\IDEAWorkSpace\monitorServer\target\classes started by wulinhao in D:\work\IDEAWorkSpace\monitorServer)
+2019-06-12 11:19:48.046 [main] INFO  com.kedong.App - No active profile set, falling back to default profiles: default
+2019-06-12 11:19:49.036 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2019-06-12 11:19:49.045 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2019-06-12 11:19:49.051 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-06-12 11:19:49.051 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-06-12 11:19:49.138 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-06-12 11:19:49.139 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1046 ms
+2019-06-12 11:19:49.193 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2019-06-12 11:19:49.296 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
